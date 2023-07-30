@@ -24,7 +24,8 @@ class NoteItem extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 child: Text(
                   "Build your career and dreams with flutter",
-                  style: TextStyle(color: Colors.black.withOpacity(0.4)),
+                  style: TextStyle(
+                      color: Colors.black.withOpacity(0.4), fontSize: 16),
                 ),
               ),
               trailing: IconButton(
