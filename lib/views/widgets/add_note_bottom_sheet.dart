@@ -21,17 +21,8 @@ class AddNoteBottomSheet extends StatelessWidget {
             if (state is AddNoteSuccess) {
               BlocProvider.of<NotesCubit>(context).fetchAllNotes();
               Navigator.pop(context);
-              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  action: SnackBarAction(label: 'Dismiss', onPressed: () {}),
-                  width: 330,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  behavior: SnackBarBehavior.floating,
-                  backgroundColor: const Color(0xff2e383e),
-                  content: const Text(
-                    'Note added successfully',
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  )));
+              BlocProvider.of<NotesCubit>(context)
+                  .showSnackBar(context, 'added');
             }
           },
           builder: (context, state) {
